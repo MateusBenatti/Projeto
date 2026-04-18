@@ -1,0 +1,256 @@
+/* Geral: */
+
+body{
+	font-family: "lucida calligraphy", "Arial", "Helvetica", sans-serif;
+	color: #4d4d4d;
+	background-color: lightskyblue;
+}
+
+h1, h2, h3{
+	margin: 0;
+	font-family: "lucida calligraphy", "Arial", "Helvetica", sans-serif;
+	font-weight: 700; /* Fonte em negrito */
+}
+
+.botao{
+	color: #f1f1f1;
+	text-decoration: none;
+	background-color: #1874CD;
+	padding: 10px 30px;	/* Formatação em torno do elemento. 10px para cima e para baixo, 
+						30 px para os lados. */
+	font-size: .9em; /* "em" - formatar o tamanho da fonte dependendo do dispositivo usado. */
+	border-radius: 100px; /* deixa as pontas redondinhas. */	
+}
+
+/* Menu de navegação: */
+
+nav{
+	background-color: #36648B;
+	display: flex; /* para ser flexicivel durante a movimentação do site, 
+	quando aumentar ou diminuir o tamanho nao mudar os ajustes */
+	flex-direction: column; /* para ter o formato de coluna */
+	align-items: center; /* para deixar os itens no centro */
+}
+
+nav > a{
+	text-decoration: none;
+	color: #f1f1f1;
+	font-weight: 700;
+	font-size: 28px;
+	font-family: "lucida calligraphy", "Arial", "Helvetica", sans-serif;
+}
+
+nav ul{
+	list-style: none; /* retira os icones ao lado da lista (as bolinhas e todas começando 
+						no mesmo lugar indep-endente do tamanho da palavra)*/
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+nav ul li{
+	text-align: center;
+	width: 100%;
+
+}
+
+nav ul li a{
+	display: inline-block; /* formatar como se fosse um bloco de colunas */
+	width: 100%;
+	text-decoration: none;
+	color: #f1f1f1;
+	padding: 10px 0;
+}
+
+/* Cabeçalho: */
+
+header{
+	background-image: url('../img/fundo7.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; /* "cover" - expande a imagem em todo o tamanho, se adaptando
+	conforme o tamanho do dispositivo */
+	color: #f1f1f1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px
+}
+
+header p{
+	margin-bottom: 2em;
+}
+
+/* Seção Sobre */
+
+#sobre{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 0 20px 20px;
+	background-color: #1874CD;
+	color: #f1f1f1;
+}
+
+#sobre p{
+	margin-bottom: 2.5em;
+	max-width: 1000px; /* largura maxima do paragrafo */
+}
+
+#sobre .botao{
+	background-color: #87CEFF;
+	color: #4d4d4d;
+}
+
+/* Conteúdo */
+
+#conteudo{
+	background-color: #009CFE;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#conteudo div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 30px;
+}
+
+#conteudo div img{
+	width: 200px;
+	height: 250px;
+}
+
+/* Imagens */
+
+#imagens{
+	background-color: #01E4FE;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+}
+
+#imagens h2{
+	margin-bottom: 20px;
+}
+
+#imagens img{
+	width: 100%;
+}
+
+/* Contato */
+
+#contato{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+}
+
+.img_contato{
+	width: 150px;
+	height: 150px;
+}
+
+/* Footer */
+
+footer{
+	text-align: center;
+	padding: 20px;
+	background-color: #36648B;
+	color: #f1f1f1;
+}
+
+/* Medias Queries - aplica a formatação do CSS de acordo com a mídia que estou utilizando, celular, pc, etc... */
+/* Até aqui as configurações eram para um dispositivo pequeno como o celular, agora vamos configurar para dispositivos
+maiores. */
+@media screen and (min-width: 768px){ /* Quando a tela estiver acima de 768px as configurações aplicadas serão essas.*/
+	/* Navegação */
+	nav{
+		flex-direction: row;/* Row: deixa a tela em linha, equanto o colum deixa os itens um em baixo do outro, a tag 
+		row deixa uma do lado da outra em uma unica linha. */
+		justify-content: space-around; /* "justify-content": Serve para "justificar" o espaçamento entre os itens */
+	}
+
+	nav ul{
+		flex-direction: row;
+		width: 70%; /* O "IFSP" ocupou 30% da pagina e os itens do ul ocuparam 70%. */
+	}
+
+	/* Cabeçalho */
+
+	header{
+		justify-content: center;/* Deixa o espaço no meio */
+		height: 350px;
+	}
+
+	/* Sobre */
+
+	#sobre{
+		height: 250px;
+		justify-content: center;
+	}
+
+	/* Conteúdo */
+
+	#conteudo{
+		flex-direction: row;
+		flex-wrap: wrap; /* Mudar conforme muda o tamanho da página */
+		align-items: flex-start;
+		margin: 0 auto;
+	}
+
+	#conteudo h2{
+		text-align: center;
+		width: 100%;
+	}
+
+	#conteudo div{
+		flex-grow: 1; /* Organizar as imagens uma por uma */
+		flex-basis: 150px;
+		padding: 0 10px;
+	}
+
+	/* Imagens */
+
+	#imagens{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	#imagens h2{
+		width: 100%;
+		text-align: center;
+	}
+
+	#imagens img{
+		width: 100%;
+	}
+
+	.div{
+		flex-grow: 1; 
+		flex-basis: 350px;
+		padding: 10px 10px;
+	}
+
+	/* Contato */
+
+	#contato{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		max-width: 500px;
+		margin: 0 auto; 
+	}
+
+}

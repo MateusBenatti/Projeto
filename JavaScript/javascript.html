@@ -1,0 +1,59 @@
+<!-- Java script é uma linguagem para controlar o HTML e o CSS.Ele é ultilizado para dar mais interatividade ás paginas web -->
+<html>
+<head>
+	<title>Conhecendo JavaScript</title>
+</head>
+<body bgcolor="lightskyblue">
+
+	<p>Resultados dos numero 5 e 6</p>
+	<p id="res_soma"></p>
+	<p id="res_sub"></p>
+	<p id="res_mult"></p>
+	<p id="res_div"></p>
+	<p id="res"></p>
+	
+	<script type="text/javascript"> // Para programar em JavaScript é necessário estra dentro de "script"
+		/* alert("Hello World"); */
+
+		// Declarando varieaveis:
+		//sintase: var variável = quanto vale/perguntar;
+
+		var nome= prompt("Digite o seu nome:");
+		var idade= prompt("Digite o sua idade:");
+
+		alert("Seja Bem Vindo, " + nome +". Sua idade é: " + idade);
+
+        // parseFloat numero decimais:
+		var numero1 = parseInt(prompt("Digite um numero:")); // "var" - Declara uma variável, uma vez declarada não é necessaria declarar de novo.
+		var numero2 = parseInt(prompt("Digite um numero:")); // "parseInt" - Converte o formato string para nº Inteiros.
+															 // "prompt" - Comando que faz com que pessa uma informação.
+		var soma = numero1 + numero2;
+		var sub = numero1 - numero2;
+	    var mult = numero1 * numero2;
+	    var div = numero2 / numero1;
+	    var res = numero2 % numero1; // Resto da divisao % (mod)
+
+	    document.getElementById('res_soma').innerHTML = "A soma dos numeros é: " + soma;
+	    // "document.getElementById('id')" - Serve para atualizar um paragrafo já criado com op id do parágrafo
+	    // ".innerHTML" - para inserir no HTML
+	    document.getElementById('res_sub').innerHTML = "A subdivisao dos numeros é: "
+	    + sub;
+	    document.getElementById('res_mult').innerHTML = "A multipicação dos numeros é: "
+	    + mult;
+	    document.getElementById('res_div').innerHTML = "A divisao dos numeros é: " + div;
+	    document.getElementById('res').innerHTML = "A divisao dos numeros é: " + res;
+	    console.log("O Resultado da soma é: " + soma);
+	    // "console.log" - Serve para deixar o escrito oculto, ou indo no controle do Navegador, mais ferramentas, opção do desenvolvedor, ou sinplesmente, Ctrl + Shift + I, indo logo após no console  
+
+	    // Alert(soma);
+
+       /*Tipagem dinâmica 
+		(kkkkkkkkkkkkkkkk
+		kkkkkkkkkkkkkkkkk
+		kkkkkkkkkkkkkkkk)
+		*/
+    </script>
+
+
+</body>
+</html>

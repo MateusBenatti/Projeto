@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Correção dos Exercícios</title>
+	<script type="text/javascript">
+		function comparar(){
+			var s1 = form1.s1.value;
+			var s2 = form1.s2.value;
+			if (s1 == s2){
+				document.getElementById("resposta").innerHTML = "As strings são Iguais!";
+				return false;
+			}else{
+				document.getElementById("resposta").innerHTML = "As strings são Diferentes";
+				return false;
+			}
+		}
+		function somar(){
+			var n = form2.numero.value;
+			var i = 1;
+			var soma = 0;
+			while(i <= n){
+				soma = soma + i;
+				i = i + 1;
+			}
+
+			document.getElementById("resultado").innerHTML = soma;
+			return false;
+		}
+
+		function fibonacci(){
+			var n = form3.n.value;
+			var p = 1;
+			var u = 1;
+			var prox = 0;
+			var seq = p + ", " + u;
+			
+			while(n >= u+p){
+				prox = p + u;
+				p = u;
+				u = prox;
+				seq = seq + ", " + u;
+			}
+			document.getElementById("resp").innerHTML = seq;
+			return false;
+		}
+	</script>
+</head>
+<body bgcolor="lightskyblue">
+	<!-- Faça um programa que receba 2 strings de caixas de texto e, ao clicar em um botão, informe em um parágrafo se elas são iguais ou diferentes -->
+	<form name="form1" method="post">
+		<label>String 1 :</label>
+		<input type="text" name="s1"><br><br>
+		<label>String 2 :</label>
+		<input type="text" name="s2"><br><br>
+		<input type="submit" onclick="return comparar()">
+	</form>
+	<p id="resposta"></p>
+
+	<!-- Faça um programa que receba um número e some todos os números de 1 até o número informado -->
+
+	<form name="form2" method="post">
+		<label>Digite um número :</label>
+		<input type="text" name="numero"><br><br>
+		<input type="submit" onclick="return somar()">
+	</form>
+
+	<p id="resultado"></p>
+
+	<!-- Faça um programa que receba um número e mostre a sequência de Fibonacci até o número informado. Ex: 1 1 2 3 5 8 13 21 34. -->
+	<form name="form3" method="post">
+		<label>Digite o número limite :</label>
+		<input type="text" name="n"><br><br>
+		<input type="submit" onclick="return fibonacci()">		
+	</form>
+	<p id="resp"></p>
+
+</body>
+</html>
